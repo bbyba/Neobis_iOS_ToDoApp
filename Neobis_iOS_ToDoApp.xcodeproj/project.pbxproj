@@ -16,6 +16,7 @@
 		DD39F20F2AF6125300D368C6 /* Neobis_iOS_ToDoAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD39F20E2AF6125300D368C6 /* Neobis_iOS_ToDoAppTests.swift */; };
 		DD39F2192AF6125300D368C6 /* Neobis_iOS_ToDoAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD39F2182AF6125300D368C6 /* Neobis_iOS_ToDoAppUITests.swift */; };
 		DD39F21B2AF6125300D368C6 /* Neobis_iOS_ToDoAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD39F21A2AF6125300D368C6 /* Neobis_iOS_ToDoAppUITestsLaunchTests.swift */; };
+		DD39F22A2AF6241A00D368C6 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD39F2292AF6241A00D368C6 /* AddViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		DD39F2142AF6125300D368C6 /* Neobis_iOS_ToDoAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Neobis_iOS_ToDoAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD39F2182AF6125300D368C6 /* Neobis_iOS_ToDoAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Neobis_iOS_ToDoAppUITests.swift; sourceTree = "<group>"; };
 		DD39F21A2AF6125300D368C6 /* Neobis_iOS_ToDoAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Neobis_iOS_ToDoAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		DD39F2292AF6241A00D368C6 /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				DD39F2002AF6125300D368C6 /* Assets.xcassets */,
 				DD39F2022AF6125300D368C6 /* LaunchScreen.storyboard */,
 				DD39F2052AF6125300D368C6 /* Info.plist */,
+				DD39F2292AF6241A00D368C6 /* AddViewController.swift */,
 			);
 			path = Neobis_iOS_ToDoApp;
 			sourceTree = "<group>";
@@ -260,6 +263,7 @@
 			files = (
 				DD39F1FC2AF6125100D368C6 /* ViewController.swift in Sources */,
 				DD39F1F82AF6125100D368C6 /* AppDelegate.swift in Sources */,
+				DD39F22A2AF6241A00D368C6 /* AddViewController.swift in Sources */,
 				DD39F1FA2AF6125100D368C6 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
