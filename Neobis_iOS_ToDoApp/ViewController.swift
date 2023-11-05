@@ -2,40 +2,90 @@
 //  ViewController.swift
 //  Neobis_iOS_ToDoApp
 //
-//  Created by Burte Bayaraa on 2023.11.01.
+//  Created by Burte Bayaraa on 2023.11.03.
+//
 //
 
 import UIKit
 
-class ViewController: UIViewController{
+struct Task{        //structure for a single task
+    var title:String
+    var details: String
+}
 
+class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var editButton: UIButton!
+    @IBOutlet weak var addButton: UIButton!
+    @IBOutlet weak var textLabel: UILabel!
     
-    @IBOutlet weak var editTaskButton: UIButton!
-    
-    @IBOutlet weak var addTaskButton: UIButton!
-//    var tasks = [String]()
+    var tasks: [Task] = []      //an array to store the tasks
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
     }
-}
-
-extension ViewController: UITableViewDataSource, UITableViewDelegate{
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return tasks.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)        //reuses the hidden cells
-        cell.textLabel?.text = tasks[indexPath.row]
+        
+        let task = tasks[indexPath.row]
+        cell.textLabel?.text = task.title   //display the title
         
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)    //deselects the selected roew
+        tableView.deselectRow(at: indexPath, animated: true)    //deselects the selected row
     }
     
+    func showAddViewController() {
+        //        let storyboard = UIStoryboard(name: "ViewController", bundle: nil)
+        //        guard let AddViewController = storyboard.instantiateViewController(identifier: "AddViewController") as? AddViewController else { return }
+        //        present(AddViewController, animated: true, completion: nil)
+        
+        //            AddViewController.name = "Ivan"
+        //
+        //            show(AddViewController, animated: true, completion: nil, sender: nil)
+        //
+        if let addViewController = storyboard?.instantiateViewController(withIdentifier: "AddViewController") as? AddViewController {
+            present(addViewController, animated: true, completion: nil)
+        }
+        
+    }
+    
+    @IBAction func addButtonTapped(_ sender: UIButton) {
+        showAddViewController()
+    }
+    
+    @IBAction func editButtonTapped(_ sender: Any) {
+    }
+    
+    func deleteTask(at Index: IndexPath){
+        
+    }
 }
+
+//
+//extension ViewController: UITableViewDataSource, UITableViewDelegate{
+//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        return tasks.count
+//    }
+//    
+//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)        //reuses the hidden cells
+//        
+//        let task = tasks[indexPath.row]
+//        cell.textLabel?.text = task.title   //display the title
+//        
+//        return cell
+//    }
+//    
+//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        tableView.deselectRow(at: indexPath, animated: true)    //deselects the selected row
+//    }
+//}
