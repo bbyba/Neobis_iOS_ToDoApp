@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol AddViewControllerDelegate: AnyObject {
+    func didAddTask(_ task: AddViewController.Task)
+}
+
 class AddViewController: UIViewController {
 
     @IBOutlet weak var titleTextField: UITextField!
@@ -19,21 +23,29 @@ class AddViewController: UIViewController {
         var details: String
     }
     
-    var tasks: [Task] = []
+//    var tasks: [Task] = []
+    
+    weak var delegate: AddViewControllerDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+//        navigationController?.setNavigationBarHidden(true, animated: false
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
+        cancelButton.isHidden = false
+        saveButton.isHidden = false
     }
     
     @IBAction func saveAction(_ sender: UIBarButtonItem) {
-        guard let title = titleTextField.text, !title.isEmpty,                  //unwraps the values for the title and details, and checks if they are empty
-                let details = detailsTextField.text, !details.isEmpty else {
+        //unwraps the values for the title and details, and checks if they are empty
+        guard let title = titleTextField.text, !title.isEmpty,
+                  let details = detailsTextField.text, !details.isEmpty else {
                 return
             }
-        
+
         //create a new task and add to the tasks array
         let task = Task(title: title, details: details)     //unchangeable reference to the object, but changeable properties
-        tasks.append(task)
+//        tasks.append(task)
+        delegate?.didAddTask(task) // Notify the delegate
         
         dismiss(animated: true, completion: nil)
         
