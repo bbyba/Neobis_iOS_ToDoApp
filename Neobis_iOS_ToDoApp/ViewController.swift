@@ -13,7 +13,7 @@ import UIKit
 //    var details: String
 //}
 
-class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, AddViewControllerDelegate {
+class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, AddViewControllerDelegate, UINavigationControllerDelegate {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var editButton: UIButton!
@@ -33,9 +33,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)        //reuses the hidden cells
-        
         let task = tasks[indexPath.row]
         cell.textLabel?.text = task.title   //display the title
+        
+        // display a checkmark if the task is completed
+//        cell.accessoryType = task.isCompleted ? .checkmark : .none
         
         return cell
     }
@@ -43,6 +45,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     //
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)    //deselects the selected row
+        // Toggle the completion status of the selected task
+//        tasks[indexPath.row].isCompleted.toggle()
+        tableView.reloadData() // Refresh the table view
     }
     
     //AddViewControllerDelegate Method
@@ -51,16 +56,13 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             tableView.reloadData() // Refresh the table view
         }
     
-    func showAddViewController() {
-        if let addViewController = storyboard?.instantiateViewController(withIdentifier: "AddViewController") as? AddViewController {
-            addViewController.delegate = self // Set ViewController as the delegate
-            present(addViewController, animated: true, completion: nil)
-        }
-    }
-    
-    @IBAction func addButtonTapped(_ sender: UIButton) {
-        showAddViewController()
-    }
+    @objc func buttonTapped(_ sender: UIButton) {
+        let vc = ViewController()
+        let navController = UINavigationController(rootViewController: vc)
+        navController.modalPresentationStyle = UIModalPresentationStyle.fullScreen
+        navController.delegate = self
+        self.present(navController, animated: true, completion: nil)
+      }
     
     @IBAction func editButtonTapped(_ sender: Any) {
     }

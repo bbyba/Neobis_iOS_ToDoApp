@@ -21,6 +21,7 @@ class AddViewController: UIViewController {
     struct Task{
         var title:String
         var details: String
+        var isCompleted: Bool
     }
     
 //    var tasks: [Task] = []
@@ -29,8 +30,8 @@ class AddViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        navigationController?.setNavigationBarHidden(true, animated: false
-        self.navigationController?.setNavigationBarHidden(false, animated: true)
+        navigationController?.setNavigationBarHidden(false, animated: false)
+//        self.navigationController?.setNavigationBarHidden(true, animated: true)
         cancelButton.isHidden = false
         saveButton.isHidden = false
     }
@@ -43,7 +44,7 @@ class AddViewController: UIViewController {
             }
 
         //create a new task and add to the tasks array
-        let task = Task(title: title, details: details)     //unchangeable reference to the object, but changeable properties
+        let task = Task(title: title, details: details, isCompleted: false)     //unchangeable reference to the object, but changeable properties
 //        tasks.append(task)
         delegate?.didAddTask(task) // Notify the delegate
         
