@@ -2,28 +2,11 @@
 //  Task.swift
 //  Neobis_iOS_ToDoApp
 //
-//  Created by Burte Bayaraa on 2023.11.06.
-//
 
-import UIKit
+import Foundation
 
-class Task: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+struct Task{
+    var title:String
+    var details: String
+    var isCompleted: Bool
 }

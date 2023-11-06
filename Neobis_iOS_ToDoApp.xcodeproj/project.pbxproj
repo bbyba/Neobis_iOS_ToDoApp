@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DD255ABD2AF915AD007FD259 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD255ABC2AF915AD007FD259 /* Task.swift */; };
 		DD39F1F82AF6125100D368C6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD39F1F72AF6125100D368C6 /* AppDelegate.swift */; };
 		DD39F1FA2AF6125100D368C6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD39F1F92AF6125100D368C6 /* SceneDelegate.swift */; };
 		DD39F1FC2AF6125100D368C6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD39F1FB2AF6125100D368C6 /* ViewController.swift */; };
@@ -37,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DD255ABC2AF915AD007FD259 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		DD39F1F42AF6125100D368C6 /* Neobis_iOS_ToDoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Neobis_iOS_ToDoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD39F1F72AF6125100D368C6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DD39F1F92AF6125100D368C6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 				DD39F2022AF6125300D368C6 /* LaunchScreen.storyboard */,
 				DD39F2052AF6125300D368C6 /* Info.plist */,
 				DD39F2292AF6241A00D368C6 /* AddViewController.swift */,
+				DD255ABC2AF915AD007FD259 /* Task.swift */,
 			);
 			path = Neobis_iOS_ToDoApp;
 			sourceTree = "<group>";
@@ -263,6 +266,7 @@
 			files = (
 				DD39F1FC2AF6125100D368C6 /* ViewController.swift in Sources */,
 				DD39F1F82AF6125100D368C6 /* AppDelegate.swift in Sources */,
+				DD255ABD2AF915AD007FD259 /* Task.swift in Sources */,
 				DD39F22A2AF6241A00D368C6 /* AddViewController.swift in Sources */,
 				DD39F1FA2AF6125100D368C6 /* SceneDelegate.swift in Sources */,
 			);
