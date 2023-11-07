@@ -33,7 +33,7 @@ class AddViewController: UIViewController {
             }
 
         //create a new task and add to the tasks array
-        let task = Task(title: title, details: details, isCompleted: false)     //unchangeable reference to the object, but changeable properties
+        _ = Task(title: title, details: details, isCompleted: false)     //unchangeable reference to the object, but changeable properties
         dismiss(animated: true, completion: nil)
         
     }

@@ -20,15 +20,19 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
     
   
     @objc func addButtonTapped(_ sender: UIButton) {
-        let vc = ViewController()
+        let vc = AddViewController()
         let navController = UINavigationController(rootViewController: vc)
         navController.modalPresentationStyle = UIModalPresentationStyle.fullScreen
         navController.delegate = self
         self.present(navController, animated: true, completion: nil)
       }
     
-//    @IBAction func editButtonTapped(_ sender: Any) {
-//    }
+    
+    //look at it again!!!!!
+    @IBAction func editButtonTapped(_ sender: Any) {
+        guard !self.tasks.isEmpty else { return }
+        self.tableView.setEditing(true, animated: true)
+    }
 }
 
 extension ViewController: UITableViewDataSource, UITableViewDelegate {
