@@ -5,7 +5,7 @@
 
 import Foundation
 
-struct Task{
+struct TaskModel: Codable {
     var title:String
     var details: String
     var isCompleted: Bool

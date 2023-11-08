@@ -11,7 +11,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Neobis_iOS_ToDoApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ViewController" id="BYZ-38-t0r" customClass="ViewController" customModule="Neobis_iOS_ToDoApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -19,13 +19,6 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="ThP-nr-iFH">
                                 <rect key="frame" x="0.0" y="60" width="430" height="789"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <label key="tableFooterView" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create a new task by clicking on the &quot;+&quot; button." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="t1k-R3-K5E">
-                                    <rect key="frame" x="0.0" y="121.66666793823242" width="430" height="44"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                    <nil key="textColor"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="detailDisclosureButton" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" editingAccessoryType="checkmark" textLabel="TnY-MC-jth" detailTextLabel="nhc-c2-2kV" style="IBUITableViewCellStyleSubtitle" id="uSJ-aP-swU">
                                         <rect key="frame" x="0.0" y="50" width="430" height="43.666667938232422"/>
@@ -59,6 +52,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="plus.circle.fill" catalog="system"/>
                                 <connections>
+                                    <action selector="addButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8kd-lh-9Fs"/>
                                     <segue destination="68O-3W-dzL" kind="show" identifier="goToAddSegue" id="z4A-zI-JUf"/>
                                 </connections>
                             </button>
@@ -93,7 +87,6 @@
                         <outlet property="addButton" destination="4n1-oO-TBf" id="c3k-sg-Nys"/>
                         <outlet property="editButton" destination="a8R-F7-hx6" id="AkU-ZJ-UEc"/>
                         <outlet property="tableView" destination="ThP-nr-iFH" id="qe1-9W-S1d"/>
-                        <outlet property="textLabel" destination="t1k-R3-K5E" id="H1G-50-byi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -139,19 +132,19 @@
                         <barButtonItem key="leftBarButtonItem" title="Cancel" id="m5E-pf-5rd">
                             <color key="tintColor" systemColor="systemRedColor"/>
                             <connections>
-                                <action selector="cancelAction:" destination="ns6-zC-C8q" id="I25-TD-rYj"/>
+                                <action selector="cancelButtonTapped:" destination="ns6-zC-C8q" id="3Bj-g8-qas"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Save" id="hGx-fP-adO">
                             <connections>
-                                <action selector="saveAction:" destination="ns6-zC-C8q" id="qJA-oj-r9a"/>
+                                <action selector="saveButtonTapped:" destination="ns6-zC-C8q" id="YoA-5W-iee"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="cancelButton" destination="m5E-pf-5rd" id="zQu-Ur-jue"/>
+                        <outlet property="cancelButton" destination="m5E-pf-5rd" id="htf-8U-sO5"/>
                         <outlet property="detailsTextField" destination="MLt-CP-YwP" id="sJx-vT-8eP"/>
-                        <outlet property="saveButton" destination="hGx-fP-adO" id="gdo-v2-zZW"/>
+                        <outlet property="saveButton" destination="hGx-fP-adO" id="jgN-CW-GE7"/>
                         <outlet property="titleTextField" destination="4Th-O3-blb" id="TEo-PR-IB1"/>
                     </connections>
                 </viewController>
